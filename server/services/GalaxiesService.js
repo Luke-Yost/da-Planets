@@ -6,6 +6,16 @@ class GalaxiesService{
     const galaxies = await dbContext.Galaxies.find()
     return galaxies
   }
+  async create(body){
+    const galaxies = await dbContext.Galaxies.create(body)
+    return galaxies
+  }
+
+  async remove(id){
+    const original = await dbContext.Galaxies.findById(id)
+    return `deleted ${original.name}`
+  }
+
 }
 
 export const galaxiesService = new GalaxiesService()

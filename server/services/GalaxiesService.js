@@ -3,7 +3,8 @@ import { dbContext } from "../db/DbContext";
 
 class GalaxiesService{
   async getAll(){
-    const galaxies = await dbContext.Galaxies
+    const galaxies = await dbContext.Galaxies.find()
+    return galaxies
   }
 }
 

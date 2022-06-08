@@ -13,6 +13,7 @@ class GalaxiesService{
 
   async remove(id){
     const original = await dbContext.Galaxies.findById(id)
+    await original.remove()
     return `deleted ${original.name}`
   }
 
